@@ -17,6 +17,7 @@ type MsfClient struct {
 	ApiVersion string
 	Rpc        *rpc.RPC
 	Auth       *AuthMangager
+	Console    *ConsoleManager
 }
 
 // Options for Making Client

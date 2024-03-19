@@ -21,10 +21,11 @@ var ErrNotAuth error = errors.New("client is not authenticated (no token)")
 
 // RPC object
 type RPC struct {
-	http  *http.Client
-	url   string
-	token string
-	Auth  *auth
+	http    *http.Client
+	url     string
+	token   string
+	Auth    *auth
+	Console *console
 }
 
 // create RPC object

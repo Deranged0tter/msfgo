@@ -2,8 +2,8 @@ package methods
 
 const (
 	ConsoleCreate        string = "console.create"
-	ConsoleList          string = "console.list"
 	ConsoleDestroy       string = "console.destroy"
+	ConsoleList          string = "console.list"
 	ConsoleRead          string = "console.read"
 	ConsoleWrite         string = "console.write"
 	ConsoleTab           string = "console.tab"
