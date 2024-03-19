@@ -18,6 +18,7 @@ type MsfClient struct {
 	Rpc        *rpc.RPC
 	Auth       *AuthMangager
 	Console    *ConsoleManager
+	Core       *CoreManager
 }
 
 // Options for Making Client
@@ -60,6 +61,9 @@ func NewClient(address string) (*MsfClient, error) {
 	msfClient := &MsfClient{
 		ApiVersion: clientOptions.ApiVersion,
 		Rpc:        rpc,
+		Auth:       &AuthMangager{rpc: rpc},
+		Console:    &ConsoleManager{rpc: rpc},
+		Core:       &CoreManager{rpc: rpc},
 	}
 
 	return msfClient, nil

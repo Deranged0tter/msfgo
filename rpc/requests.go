@@ -70,3 +70,32 @@ type ConsoleSessionKillReq struct {
 	Token  string
 	Id     int
 }
+
+// core.setg request
+type CoreSetGReq struct {
+	Method string
+	Token  string
+	V      string
+	Val    string
+}
+
+// core.unsetg request
+type CoreUnsetGReq struct {
+	Method string
+	Token  string
+	V      string
+}
+
+// core.add_module_path request
+type CoreModuleAddReq struct {
+	Method string
+	Token  string
+	Path   string
+}
+
+// core.thread_kill request
+type CoreThreadKillReq struct {
+	Method string
+	Token  string
+	Tid    int
+}

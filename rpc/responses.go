@@ -52,3 +52,51 @@ type ConsoleWriteResp struct {
 type ConsoleTabResp struct {
 	Tabs string `msgpack:"tabs"`
 }
+
+// core.version response
+type CoreVersionResp struct {
+	Version string `msgpack:"version"`
+	Ruby    string `msgpack:"ruby"`
+	Api     string `msgpack:"api"`
+}
+
+// core.reload_modules response
+type CoreReloadModulesResp struct {
+	Exploits  uint `msgpack:"exploits"`
+	Auxiliary uint `msgpack:"auxiliary"`
+	Post      uint `msgpack:"post"`
+	Encoders  uint `msgpack:"encoders"`
+	NOPs      uint `msgpack:"nops"`
+	Payloads  uint `msgpack:"payloads"`
+	Evasions  uint `msgpack:"evasions"`
+}
+
+// core.module_stats
+type CoreModuleStatsResp struct {
+	Exploits  uint `msgpack:"exploits"`
+	Auxiliary uint `msgpack:"auxiliary"`
+	Post      uint `msgpack:"post"`
+	Encoders  uint `msgpack:"encoders"`
+	NOPs      uint `msgpack:"nops"`
+	Payloads  uint `msgpack:"payloads"`
+	Evasions  uint `msgpack:"evasions"`
+}
+
+// core.add_module_path
+type CoreAddModulePathResp struct {
+	Exploits  uint `msgpack:"exploits"`
+	Auxiliary uint `msgpack:"auxiliary"`
+	Post      uint `msgpack:"post"`
+	Encoders  uint `msgpack:"encoders"`
+	NOPs      uint `msgpack:"nops"`
+	Payloads  uint `msgpack:"payloads"`
+	Evasions  uint `msgpack:"evasions"`
+}
+
+// core.thread_list
+type CoreThreadListResp map[string][]struct {
+	Status   string `msgpack:"status"`
+	Critical bool   `msgpack:"critical"`
+	Name     string `msgpack:"name"`
+	Started  string `msgpack:"started"`
+}

@@ -26,6 +26,7 @@ type RPC struct {
 	token   string
 	Auth    *auth
 	Console *console
+	Core    *core
 }
 
 // create RPC object
@@ -37,6 +38,8 @@ func NewRPC(http *http.Client, url string) *RPC {
 	}
 
 	rpc.Auth = &auth{rpc: rpc}
+	rpc.Console = &console{rpc: rpc}
+	rpc.Core = &core{rpc: rpc}
 
 	return rpc
 }
