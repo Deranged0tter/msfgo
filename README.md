@@ -7,6 +7,17 @@ Thank you to [hupe1980](https://github.com/hupe1980) and his [gomsf](https://git
 - [RPC Api](https://docs.rapid7.com/metasploit/rpc-api)
 - [Msf::RPC](https://docs.metasploit.com/api/Msf/RPC.html)
 
+# Adding this Libarary to your Project
+```
+go get github.com/deranged0tter/msfgo
+```
+
+```
+import (
+    "github.com/deranged0tter/msfgo"
+)
+```
+
 # Starting the RPC Server for Metasploit
 From msfconsole:
 ```
