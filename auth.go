@@ -1,17 +1,8 @@
 package msfgo
 
 import (
-	"errors"
-
+	"github.com/deranged0tter/msfgo/errors"
 	"github.com/deranged0tter/msfgo/rpc"
-)
-
-var (
-	ErrFailedAuth        error = errors.New("failed to authenticate")
-	ErrFailedLogout      error = errors.New("failed to logout")
-	ErrTokenAddFail      error = errors.New("failed to add new token")
-	ErrTokenGenerateFail error = errors.New("failed to generate new token")
-	ErrTokenRemoveFail   error = errors.New("failed to remove token")
 )
 
 type AuthMangager struct {
@@ -26,7 +17,7 @@ func (am *AuthMangager) Login(username string, password string) (string, error) 
 	}
 
 	if resp.Result == rpc.Failure || resp.Token == "" {
-		return "", ErrFailedAuth
+		return "", errors.ErrAuthLoginFailed
 	}
 
 	return resp.Token, nil
@@ -40,7 +31,7 @@ func (am *AuthMangager) Logout() error {
 	}
 
 	if resp.Result == rpc.Failure {
-		return ErrFailedLogout
+		return errors.ErrAuthLogoutFailed
 	}
 
 	return nil
@@ -64,7 +55,7 @@ func (am *AuthMangager) TokenAdd(token string) error {
 	}
 
 	if resp.Result == rpc.Failure {
-		return ErrTokenAddFail
+		return errors.ErrAuthTokenAddFailed
 	}
 
 	return nil
@@ -78,7 +69,7 @@ func (am *AuthMangager) TokenGenerate() (string, error) {
 	}
 
 	if resp.Result == rpc.Failure {
-		return "", ErrTokenGenerateFail
+		return "", errors.ErrAuthTokenGenerateFailed
 	}
 
 	return resp.Token, nil
@@ -92,7 +83,7 @@ func (am *AuthMangager) TokenRemove(token string) error {
 	}
 
 	if resp.Result == rpc.Failure {
-		return ErrTokenRemoveFail
+		return errors.ErrAuthTokenRemoveFailed
 	}
 
 	return nil

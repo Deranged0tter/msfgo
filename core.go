@@ -1,16 +1,8 @@
 package msfgo
 
 import (
-	"errors"
-
+	"github.com/deranged0tter/msfgo/errors"
 	"github.com/deranged0tter/msfgo/rpc"
-)
-
-var (
-	ErrFailedSetG       error = errors.New("failed to set global variable")
-	ErrFailedUnsetG     error = errors.New("failed to unset global variable")
-	ErrFailedSave       error = errors.New("failed to save framework settings")
-	ErrThreadKillFailed error = errors.New("failed to kill thread")
 )
 
 type CoreManager struct {
@@ -50,7 +42,7 @@ func (cm *CoreManager) SetG(v string, val string) error {
 	}
 
 	if resp.Result == rpc.Failure {
-		return ErrFailedSetG
+		return errors.ErrCoreSetGFailed
 	}
 
 	return nil
@@ -64,7 +56,7 @@ func (cm *CoreManager) UnsetG(v string) error {
 	}
 
 	if resp.Result == rpc.Failure {
-		return ErrFailedUnsetG
+		return errors.ErrCoreUnsetGFailed
 	}
 
 	return nil
@@ -78,7 +70,7 @@ func (cm *CoreManager) Save() error {
 	}
 
 	if resp.Result == rpc.Failure {
-		return ErrFailedSave
+		return errors.ErrCoreSaveFailed
 	}
 
 	return nil
@@ -132,7 +124,7 @@ func (cm *CoreManager) ThreadKill(tid int) error {
 	}
 
 	if resp.Result == rpc.Failure {
-		return ErrThreadKillFailed
+		return errors.ErrCoreThreadKillFailed
 	}
 
 	return nil

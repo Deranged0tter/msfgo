@@ -1,15 +1,8 @@
 package msfgo
 
 import (
-	"errors"
-
+	"github.com/deranged0tter/msfgo/errors"
 	"github.com/deranged0tter/msfgo/rpc"
-)
-
-var (
-	ErrConsoleDestroyFail error = errors.New("failed to destroy console")
-	ErrSessionDetachFail  error = errors.New("failed to detach session")
-	ErrSessionKillFail    error = errors.New("failed to kill session")
 )
 
 type ConsoleManager struct {
@@ -52,7 +45,7 @@ func (cm *ConsoleManager) Destroy(id int) error {
 	}
 
 	if resp.Result == rpc.Failure {
-		return ErrConsoleDestroyFail
+		return errors.ErrConsoleDestroyFailed
 	}
 
 	return nil
@@ -113,7 +106,7 @@ func (cm *ConsoleManager) SessionDetach(id int) error {
 	}
 
 	if resp.Result == rpc.Failure {
-		return ErrSessionDetachFail
+		return errors.ErrConsoleSessionDetachFailed
 	}
 
 	return nil
@@ -127,7 +120,7 @@ func (cm *ConsoleManager) SessionKill(id int) error {
 	}
 
 	if resp.Result == rpc.Failure {
-		return ErrSessionKillFail
+		return errors.ErrConsoleSessionKillFailed
 	}
 
 	return nil
