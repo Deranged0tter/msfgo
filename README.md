@@ -4,8 +4,8 @@ Go library for interacting with Metasploit's RPC API
 Thank you to [hupe1980](https://github.com/hupe1980) and his [gomsf](https://github.com/hupe1980/gomsf) library for inspiration. This library is based off of his amazing work.
 
 ## Rapid7 Documentation
-[RPC Api](https://docs.rapid7.com/metasploit/rpc-api)
-[Msf::RPC](https://docs.metasploit.com/api/Msf/RPC.html)
+- [RPC Api](https://docs.rapid7.com/metasploit/rpc-api)
+- [Msf::RPC](https://docs.metasploit.com/api/Msf/RPC.html)
 
 # Starting the RPC Server for Metasploit
 From msfconsole:
