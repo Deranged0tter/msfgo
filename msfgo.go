@@ -19,6 +19,7 @@ type MsfClient struct {
 	Auth       *AuthMangager
 	Console    *ConsoleManager
 	Core       *CoreManager
+	Job        *JobManager
 }
 
 // Options for Making Client
@@ -64,6 +65,7 @@ func NewClient(address string) (*MsfClient, error) {
 		Auth:       &AuthMangager{rpc: rpc},
 		Console:    &ConsoleManager{rpc: rpc},
 		Core:       &CoreManager{rpc: rpc},
+		Job:        &JobManager{rpc: rpc},
 	}
 
 	return msfClient, nil

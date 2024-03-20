@@ -29,6 +29,9 @@ var (
 // db errors
 
 // job errors
+var (
+	ErrJobStopFailed error = errors.New("failed to stop job")
+)
 
 // module errors
 

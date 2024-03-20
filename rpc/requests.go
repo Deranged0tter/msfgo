@@ -99,3 +99,17 @@ type CoreThreadKillReq struct {
 	Token  string
 	Tid    int
 }
+
+// job.info request
+type JobInfoReq struct {
+	Method string
+	Token  string
+	Jid    int
+}
+
+// job.stop request
+type JobStopReq struct {
+	Method string
+	Token  string
+	Jid    int
+}

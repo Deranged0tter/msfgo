@@ -100,3 +100,14 @@ type CoreThreadListResp map[string][]struct {
 	Name     string `msgpack:"name"`
 	Started  string `msgpack:"started"`
 }
+
+// job.list
+type JobListResp map[string]string
+
+// job.info
+type JobInfoResp struct {
+	Jid       int                    `msgpack:"jid"`
+	Name      string                 `msgpack:"name"`
+	StartTime int                    `msgpack:"start_time"`
+	Datastore map[string]interface{} `msgpack:"datastore,omitempty"`
+}

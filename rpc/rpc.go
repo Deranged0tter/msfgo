@@ -27,6 +27,7 @@ type RPC struct {
 	Auth    *auth
 	Console *console
 	Core    *core
+	Job     *job
 }
 
 // create RPC object
@@ -40,6 +41,7 @@ func NewRPC(http *http.Client, url string) *RPC {
 	rpc.Auth = &auth{rpc: rpc}
 	rpc.Console = &console{rpc: rpc}
 	rpc.Core = &core{rpc: rpc}
+	rpc.Job = &job{rpc: rpc}
 
 	return rpc
 }
