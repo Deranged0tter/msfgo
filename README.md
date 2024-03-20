@@ -117,9 +117,9 @@ defer client.Logout()
 - [ ] db.disconnect
 
 ## Job
-- [ ] job.list
-- [ ] job.stop
-- [ ] job.info
+- [X] job.list
+- [X] job.stop
+- [X] job.info
 
 ## Module
 - [ ] module.exploits
