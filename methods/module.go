@@ -9,12 +9,12 @@ const (
 	ModuleNops                     string = "module.nops"
 	ModulePlatforms                string = "module.platforms"
 	ModulePost                     string = "module.post"
-	ModuleInfo                     string = "module.info"
+	ModuleInfo                     string = "module.info" // priority
 	ModuleCompatiblePayloads       string = "module.compatible_payloads"
 	ModuleCompatibleSessions       string = "module.compatible_sessions"
 	ModuleTargetCompatiblePayloads string = "module.target_compatible_payloads"
-	ModuleOptions                  string = "module.options"
-	ModuleExecute                  string = "module.execute"
+	ModuleOptions                  string = "module.options" // priority
+	ModuleExecute                  string = "module.execute" // priority
 	ModuleEncodeFormats            string = "module.encode_formats"
 	ModuleEncode                   string = "module.encode"
 	ModuleSearch                   string = "module.search"

@@ -131,3 +131,8 @@ type ModuleAuxiliaryResp struct {
 type ModulePayloadsResp struct {
 	Modules []string `msgpack:"modules"`
 }
+
+// module.encoders
+type ModuleEncodersResp struct {
+	Modules []string `msgpacK:"modules"`
+}

@@ -65,3 +65,18 @@ func (m *module) Payloads() (*ModulePayloadsResp, error) {
 
 	return resp, nil
 }
+
+func (m *module) Encoders() (*ModuleEncodersResp, error) {
+	req := &GenericRequest{
+		Method: methods.ModuleEncoders,
+		Token:  m.rpc.GetToken(),
+	}
+
+	var resp *ModuleEncodersResp
+	err := m.rpc.Call(req, &resp)
+	if err != nil {
+		return nil, err
+	}
+
+	return resp, nil
+}
