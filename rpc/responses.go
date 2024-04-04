@@ -111,3 +111,23 @@ type JobInfoResp struct {
 	StartTime int                    `msgpack:"start_time"`
 	Datastore map[string]interface{} `msgpack:"datastore,omitempty"`
 }
+
+// module.exploits
+type ModuleExploitsResp struct {
+	Modules []string `msgpack:"modules"`
+}
+
+// module.evasion
+type ModuleEvasionResp struct {
+	Modules []string `msgpack:"modules"`
+}
+
+// module.auxiliary
+type ModuleAuxiliaryResp struct {
+	Modules []string `msgpack:"modules"`
+}
+
+// module.payloads
+type ModulePayloadsResp struct {
+	Modules []string `msgpack:"modules"`
+}
