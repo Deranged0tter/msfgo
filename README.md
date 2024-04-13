@@ -45,6 +45,12 @@ if err != nil {
 defer client.Logout()
 ```
 
+# Find a Bug?
+Submit an [issue](https://github.com/Deranged0tter/msfgo/issues)
+
+# Want to add a feature or missing module?
+Submit a pull request
+
 # Supported Methods
 ## Auth
 - [X] auth.login
