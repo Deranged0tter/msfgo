@@ -28,6 +28,7 @@ type RPC struct {
 	Console *console
 	Core    *core
 	Job     *job
+	Module  *module
 }
 
 // create RPC object

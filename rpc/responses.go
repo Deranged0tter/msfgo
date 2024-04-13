@@ -134,5 +134,32 @@ type ModulePayloadsResp struct {
 
 // module.encoders
 type ModuleEncodersResp struct {
-	Modules []string `msgpacK:"modules"`
+	Modules []string `msgpack:"modules"`
+}
+
+// module.nops
+type ModuleNopsResp struct {
+	Modules []string `msgpack:"modules"`
+}
+
+// module.platforms
+type ModulePlatformsResp struct {
+	Platforms []string `msgpack:"platforms"`
+}
+
+// module.post
+type ModulePostResp struct {
+	Modules []string `msgpack:"modules"`
+}
+
+// module.info
+type ModuleInfoRes struct {
+	Name        string     `msgpack:"name"`
+	Description string     `msgpack:"description"`
+	License     string     `msgpack:"license"`
+	FilePath    string     `msgpack:"filepath"`
+	Version     string     `msgpack:"version"`
+	Rank        string     `msgpack:"rank"`
+	References  [][]string `msgpack:"references"`
+	Authors     []string   `msgpack:"authors"`
 }

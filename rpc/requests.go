@@ -113,3 +113,11 @@ type JobStopReq struct {
 	Token  string
 	Jid    int
 }
+
+// module.info request
+type ModuleInfoReq struct {
+	Method     string
+	Token      string
+	ModuleType string
+	ModuleName string
+}

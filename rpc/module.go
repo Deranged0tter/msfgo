@@ -80,3 +80,33 @@ func (m *module) Encoders() (*ModuleEncodersResp, error) {
 
 	return resp, nil
 }
+
+func (m *module) Nops() (*ModuleNopsResp, error) {
+	req := &GenericRequest{
+		Method: methods.ModuleNops,
+		Token:  m.rpc.GetToken(),
+	}
+
+	var resp *ModuleNopsResp
+	err := m.rpc.Call(req, &resp)
+	if err != nil {
+		return nil, err
+	}
+
+	return resp, nil
+}
+
+func (m *module) Platforms() (*ModulePlatformsResp, error) {
+	req := &GenericRequest{
+		Method: methods.ModulePlatforms,
+		Token:  m.rpc.GetToken(),
+	}
+
+	var resp *ModulePlatformsResp
+	err := m.rpc.Call(req, &resp)
+	if err != nil {
+		return nil, err
+	}
+
+	return resp, nil
+}
