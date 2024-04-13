@@ -110,3 +110,20 @@ func (m *module) Platforms() (*ModulePlatformsResp, error) {
 
 	return resp, nil
 }
+
+func (m *module) Post() (*ModulePostResp, error) {
+	req := &GenericRequest{
+		Method: methods.ModuleNops,
+		Token:  m.rpc.GetToken(),
+	}
+
+	var resp *ModulePostResp
+	err := m.rpc.Call(req, &resp)
+	if err != nil {
+		return nil, err
+	}
+
+	return resp, nil
+}
+
+func (m *module) Info() (*)
