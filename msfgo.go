@@ -20,6 +20,7 @@ type MsfClient struct {
 	Console    *ConsoleManager
 	Core       *CoreManager
 	Job        *JobManager
+	Module     *ModuleManager
 }
 
 // Options for Making Client
@@ -66,6 +67,7 @@ func NewClient(address string) (*MsfClient, error) {
 		Console:    &ConsoleManager{rpc: rpc},
 		Core:       &CoreManager{rpc: rpc},
 		Job:        &JobManager{rpc: rpc},
+		Module:     &ModuleManager{rpc: rpc},
 	}
 
 	return msfClient, nil
