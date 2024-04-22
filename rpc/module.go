@@ -126,4 +126,102 @@ func (m *module) Post() (*ModulePostResp, error) {
 	return resp, nil
 }
 
-func (m *module) Info() (*)
+func (m *module) Info(mType string, mName string) (*ModuleInfoResp, error) {
+	req := &ModuleInfoReq{
+		Method:     methods.ModuleNops,
+		Token:      m.rpc.GetToken(),
+		ModuleType: mType,
+		ModuleName: mName,
+	}
+
+	var resp *ModuleInfoResp
+	err := m.rpc.Call(req, &resp)
+	if err != nil {
+		return nil, err
+	}
+
+	return resp, nil
+}
+
+func (m *module) CompatiblePayloads(mName string) (*ModuleCompatiblePayloadsResp, error) {
+	req := &ModuleCompatiblePayloadsReq{
+		Method:     methods.ModuleNops,
+		Token:      m.rpc.GetToken(),
+		ModuleName: mName,
+	}
+
+	var resp *ModuleCompatiblePayloadsResp
+	err := m.rpc.Call(req, &resp)
+	if err != nil {
+		return nil, err
+	}
+
+	return resp, nil
+}
+
+func (m *module) CompatibleSessions(mName string) (*ModuleCompatibleSessionsResp, error) {
+	req := &ModuleCompatibleSessionsReq{
+		Method:     methods.ModuleNops,
+		Token:      m.rpc.GetToken(),
+		ModuleName: mName,
+	}
+
+	var resp *ModuleCompatibleSessionsResp
+	err := m.rpc.Call(req, &resp)
+	if err != nil {
+		return nil, err
+	}
+
+	return resp, nil
+}
+
+func (m *module) Options(mType string, mName string) (*ModuleOptionsResp, error) {
+	req := &ModuleOptionsReq{
+		Method:     methods.ModuleNops,
+		Token:      m.rpc.GetToken(),
+		ModuleType: mType,
+		ModuleName: mName,
+	}
+
+	var resp *ModuleOptionsResp
+	err := m.rpc.Call(req, &resp)
+	if err != nil {
+		return nil, err
+	}
+
+	return resp, nil
+}
+
+func (m *module) Execute(mType string, mName string, options map[string]string) (*ModuleExecuteResp, error) {
+	req := &ModuleExecuteReq{
+		Method:     methods.ModuleNops,
+		Token:      m.rpc.GetToken(),
+		ModuleType: mType,
+		ModuleName: mName,
+		Options:    options,
+	}
+
+	var resp *ModuleExecuteResp
+	err := m.rpc.Call(req, &resp)
+	if err != nil {
+		return nil, err
+	}
+
+	return resp, nil
+}
+
+func (m *module) Search(query string) (*ModuleSearchResp, error) {
+	req := &ModuleSearchReq{
+		Method: methods.ModuleNops,
+		Token:  m.rpc.GetToken(),
+		Match:  query,
+	}
+
+	var resp *ModuleSearchResp
+	err := m.rpc.Call(req, &resp)
+	if err != nil {
+		return nil, err
+	}
+
+	return resp, nil
+}

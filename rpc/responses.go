@@ -153,7 +153,7 @@ type ModulePostResp struct {
 }
 
 // module.info
-type ModuleInfoRes struct {
+type ModuleInfoResp struct {
 	Name        string     `msgpack:"name"`
 	Description string     `msgpack:"description"`
 	License     string     `msgpack:"license"`
@@ -162,4 +162,36 @@ type ModuleInfoRes struct {
 	Rank        string     `msgpack:"rank"`
 	References  [][]string `msgpack:"references"`
 	Authors     []string   `msgpack:"authors"`
+}
+
+// module.compatible_payloads
+type ModuleCompatiblePayloadsResp struct {
+	Payloads []string `msgpack:"payloads"`
+}
+
+// module.compatible_sessions
+type ModuleCompatibleSessionsResp struct {
+	Sessions []string `msgpack:"sessions"`
+}
+
+// module.options
+type ModuleOptionsResp map[string]struct {
+	Type     string      `msgpack:"type"`
+	Required bool        `msgpack:"required"`
+	Advanced bool        `msgpack:"advanced"`
+	Evasion  bool        `msgpack:"evasion"`
+	Desc     string      `msgpack:"desc"`
+	Default  interface{} `msgpack:"default"`
+	Enums    []string    `msgpack:"enums,omitempty"`
+}
+
+// module.execute
+type ModuleExecuteResp struct {
+	Jid  int    `msgpack:"job_id"`
+	UUID string `msgpack:"uuid"`
+}
+
+// module.search
+type ModuleSearchResp struct {
+	Matches []string `msgpack:"matches"`
 }

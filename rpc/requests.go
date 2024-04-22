@@ -121,3 +121,41 @@ type ModuleInfoReq struct {
 	ModuleType string
 	ModuleName string
 }
+
+// module.compatible_payloads request
+type ModuleCompatiblePayloadsReq struct {
+	Method     string
+	Token      string
+	ModuleName string
+}
+
+// module.compatible_sessions request
+type ModuleCompatibleSessionsReq struct {
+	Method     string
+	Token      string
+	ModuleName string
+}
+
+// module.options request
+type ModuleOptionsReq struct {
+	Method     string
+	Token      string
+	ModuleType string
+	ModuleName string
+}
+
+// module.execute request
+type ModuleExecuteReq struct {
+	Method     string
+	Token      string
+	ModuleType string
+	ModuleName string
+	Options    map[string]string
+}
+
+// module.search request
+type ModuleSearchReq struct {
+	Method string
+	Token  string
+	Match  string
+}
