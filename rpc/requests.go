@@ -159,3 +159,12 @@ type ModuleSearchReq struct {
 	Token  string
 	Match  string
 }
+
+// module.check request
+type ModuleCheckReq struct {
+	Method     string
+	Token      string
+	ModuleType string
+	ModuleName string
+	Options    map[string]string
+}

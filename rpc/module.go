@@ -225,3 +225,15 @@ func (m *module) Search(query string) (*ModuleSearchResp, error) {
 
 	return resp, nil
 }
+
+func (m *module) Check(mType string, mName string, options map[string]string) error {
+	req := &ModuleCheckReq{
+		Method:     methods.ModuleCheck,
+		Token:      m.rpc.GetToken(),
+		ModuleType: mType,
+		ModuleName: mName,
+		Options:    options,
+	}
+
+	return m.rpc.Call(req, nil)
+}

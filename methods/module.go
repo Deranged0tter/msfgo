@@ -16,5 +16,4 @@ const (
 	ModuleExecute            string = "module.execute"
 	ModuleSearch             string = "module.search"
 	ModuleCheck              string = "module.check"
-	ModuleResults            string = "module.results"
 )

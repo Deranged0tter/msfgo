@@ -142,8 +142,7 @@ Submit a pull request
 - [X] module.options
 - [X] module.execute
 - [X] module.search
-- [ ] module.check
-- [ ] module.results
+- [X] module.check
 
 ## Plugin
 - [ ] plugin.load
