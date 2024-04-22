@@ -195,3 +195,38 @@ type ModuleExecuteResp struct {
 type ModuleSearchResp struct {
 	Matches []string `msgpack:"matches"`
 }
+
+// session.list
+type SessionListResp map[int]struct {
+	Type        string `msgpack:"type"`
+	TunnelLocal string `msgpack:"tunnel_local"`
+	TunnelPeer  string `msgpack:"tunnel_peer"`
+	ViaExploit  string `msgpack:"via_exploit"`
+	Description string `msgpack:"desc"`
+	Info        string `msgpack:"info"`
+	Workspace   string `msgpack:"workspace"`
+	SessionHost string `msgpack:"session_host"`
+	SessionPort int    `msgpack:"session_port"`
+	TargetHost  string `msgpack:"target_host"`
+	Username    string `msgpack:"Username"`
+	Uuid        string `msgpack:"uuid"`
+	ExploitUuid string `msgpack:"exploit_uuid"`
+	Routes      string `msgpack:"routes"`
+	Platform    string `msgpack:"platform"`
+}
+
+// session.shell_read
+type SessionShellReadResp struct {
+	Seq  string `msgpack:"seq"`
+	Data string `msgpack:"data"`
+}
+
+// session.shell_write
+type SessionShellWriteResp struct {
+	WriteCount int `msgpack:"write_count"`
+}
+
+// session.interactive_read
+type MeterpreterReadResp struct {
+	Data string `msgpack:"data"`
+}

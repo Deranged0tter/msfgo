@@ -168,3 +168,49 @@ type ModuleCheckReq struct {
 	ModuleName string
 	Options    map[string]string
 }
+
+// session.stop request
+type SessionStopReq struct {
+	Method string
+	Token  string
+	Sid    int
+}
+
+// session.shell_read
+type SessionShellReadReq struct {
+	Method string
+	Token  string
+	Sid    int
+}
+
+// session.shell_write
+type SessionShellWriteReq struct {
+	Method string
+	Token  string
+	Sid    int
+	Data   string
+}
+
+// session.shell_upgrade
+type SessionShellUpgradeReq struct {
+	Method string
+	Token  string
+	Sid    int
+	LHost  string
+	LPort  int
+}
+
+// session.interactive_read
+type SessionMeterpreterReadReq struct {
+	Method string
+	Token  string
+	Sid    int
+}
+
+// session.interactive_write
+type SessionMeterpreterWriteReq struct {
+	Method string
+	Token  string
+	Sid    int
+	Data   string
+}

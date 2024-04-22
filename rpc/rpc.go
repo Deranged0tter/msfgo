@@ -29,6 +29,7 @@ type RPC struct {
 	Core    *core
 	Job     *job
 	Module  *module
+	Session *session
 }
 
 // create RPC object
@@ -43,6 +44,8 @@ func NewRPC(http *http.Client, url string) *RPC {
 	rpc.Console = &console{rpc: rpc}
 	rpc.Core = &core{rpc: rpc}
 	rpc.Job = &job{rpc: rpc}
+	rpc.Module = &module{rpc: rpc}
+	rpc.Session = &session{rpc: rpc}
 
 	return rpc
 }

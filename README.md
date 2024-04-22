@@ -150,23 +150,22 @@ Submit a pull request
 - [ ] plugin.loaded
 
 ## Session
-- [ ] session.list
-- [ ] session.stop
-- [ ] session.shell_read
-- [ ] session.shell_write
-- [ ] session.shell_upgrade
-- [ ] session.meterpreter_read
-- [ ] session.ring_read
-- [ ] session.ring_put
-- [ ] session.ring_last
-- [ ] session.ring_clear
-- [ ] session.meterpreter_write
+- [X] session.list
+- [X] session.stop
+- [X] session.shell_read
+- [X] session.shell_write
+- [X] session.shell_upgrade
+- [X] session.meterpreter_read
+- [X] session.meterpreter_write
 - [ ] session.meterpreter_session_detach
 - [ ] session.meterpreter_session_kill
 - [ ] session.meterpreter_tabs
 - [ ] session.meterpreter_run_single
-- [ ] session.meterpreter_script
 - [ ] session.meterpreter_directory_separator
+- [ ] session.ring_read
+- [ ] session.ring_put
+- [ ] session.ring_last
+- [ ] session.ring_clear
 - [ ] session.compatible_modules
 
 # Tested Functions

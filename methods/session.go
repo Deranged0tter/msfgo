@@ -1,22 +1,21 @@
 package methods
 
 const (
-	SessionList                          string = "session.list"             // priority
-	SessionStop                          string = "session.stop"             // priority
-	SessionShellRead                     string = "session.shell_read"       // priority
-	SessionShellWrite                    string = "session.shell_write"      // priority
-	SessionShellUpgrade                  string = "session.shell_upgrade"    // priority
-	SessionMeterpreterRead               string = "session.meterpreter_read" // priority
-	SessionRingRead                      string = "session.ring_read"
-	SessionRingPut                       string = "session.ring_put"
-	SessionRingLast                      string = "session.ring_last"
-	SessionRingClear                     string = "session.ring_clear"
-	SessionMeterpreterWrite              string = "session.meterpreter_write"          // priority
-	SessionMeterpreterSessionDetach      string = "session.meterpreter_session_detach" // priority
-	SessionMeterpreterSessionKill        string = "session.meterpreter_session_kill"   // priority
+	SessionList                          string = "session.list"
+	SessionStop                          string = "session.stop"
+	SessionShellRead                     string = "session.shell_read"
+	SessionShellWrite                    string = "session.shell_write"
+	SessionShellUpgrade                  string = "session.shell_upgrade"
+	SessionMeterpreterRead               string = "session.interactive_read"
+	SessionMeterpreterWrite              string = "session.interactive_write"
+	SessionMeterpreterSessionDetach      string = "session.meterpreter_session_detach"
+	SessionMeterpreterSessionKill        string = "session.meterpreter_session_kill"
 	SessionMeterpreterTabs               string = "session.meterpreter_tabs"
-	SessionMeterpreterRunSingle          string = "session.meterpreter_run_single" // priority
-	SessionMeterpreterScript             string = "session.meterpreter_script"
+	SessionMeterpreterRunSingle          string = "session.meterpreter_run_single" //
 	SessionMeterpreterDirectorySeparator string = "session.meterpreter_directory_separator"
+	SessionRingRead                      string = "session.ring_read" //
+	SessionRingPut                       string = "session.ring_put"  //
+	SessionRingLast                      string = "session.ring_last" //
+	SessionRingClear                     string = "session.ring_clear"
 	SessionCompatibleModules             string = "session.compatible_modules"
 )
